@@ -1,4 +1,6 @@
 @use 'styles/shared' as *;
+@use './infoBoxExpanded.scss';
+@use './infoBoxCollapsed.scss';
 
 .info-box {
   color: $white-100;
@@ -9,45 +11,14 @@
   width: 100%;
   z-index: 2;
 
-  &--expanded {
-    height: 300px;
-    @include md {
-      bottom: 101px;
-      max-width: 412px;
-    }
-  }
-
   &__container {
     background-color: $red-400;
-    transition: all 4s;
-  }
-
-  &--expanded &__container {
-    border-radius: 8px;
-    height: 100%;
-    padding: 42px;
-    width: 100%;
-  }
-
-  &--collapsed &__container {
-    border-radius: 50%;
-    display: grid;
-    height: 36px;
-    place-content: center;
-    width: 36px;
+    transition: border-radius 300ms, height 300ms, width 300ms;
   }
 
   &__content {
-  }
-
-  &--expanded &__content {
-    transition: all 5s 1s;
     position: absolute;
-  }
-
-  &--collapsed &__content {
-    opacity: 0;
-    visibility: hidden;
+    transform: translateY(20px);
   }
 
   &__header {
@@ -58,11 +29,6 @@
     margin-bottom: 24px;
     font-size: 32px;
     padding: 0;
-    transition: all 5s;
-  }
-
-  &--expanded &__header--short-info {
-    display: none;
   }
 
   &__footer {
@@ -72,10 +38,6 @@
 
   &__plus-button {
     color: $white-100;
-  }
-
-  &--expanded &__plus-button {
-    display: none;
   }
 }
 

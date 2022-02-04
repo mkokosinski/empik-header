@@ -1,0 +1,25 @@
+@use 'styles/shared' as *;
+
+.info-box--collapsed {
+  margin-left: 23px;
+  .info-box {
+    &__container {
+      border-radius: 50%;
+      display: grid;
+      height: 36px;
+      place-content: center;
+      width: 36px;
+    }
+
+    &__content {
+      margin-left: 23px;
+      font-size: 26px;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &__header {
+      font-size: 26px;
+    }
+  }
+}

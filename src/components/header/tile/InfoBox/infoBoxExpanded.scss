@@ -1,0 +1,28 @@
+@use 'styles/shared' as *;
+
+.info-box--expanded {
+  @include md {
+    bottom: 101px;
+  }
+  .info-box {
+    &__container {
+      border-radius: 8px;
+      height: 300px;
+      padding: 42px;
+      width: 412px;
+    }
+
+    &__content {
+      position: absolute;
+      transition: transform 300ms 200ms, opacity 300ms 200ms;
+      transform: translateY(0);
+    }
+
+    &__header--short-info {
+      display: none;
+    }
+    &__plus-button {
+      display: none;
+    }
+  }
+}

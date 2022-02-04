@@ -12,7 +12,6 @@ const Tile = ({ isOpen, infoBox, img, type, handleClick }) => {
       <InfoBox {...infoBox} isOpen={isOpen} className='tile__info-box' />
       <img src={img} alt={`${infoBox.header} background`} className='tile__image' />
       <div className='tile__overlay'></div>
-      <div>{type}</div>
     </div>
   );
 };
