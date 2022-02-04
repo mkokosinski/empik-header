@@ -1,0 +1,89 @@
+@use 'styles/shared' as *;
+
+.info-box {
+  color: $white-100;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+
+  &--expanded {
+    height: 300px;
+    @include md {
+      bottom: 101px;
+      max-width: 412px;
+    }
+  }
+
+  &__container {
+    background-color: $red-400;
+    transition: all 4s;
+  }
+
+  &--expanded &__container {
+    border-radius: 8px;
+    height: 100%;
+    padding: 42px;
+    width: 100%;
+  }
+
+  &--collapsed &__container {
+    border-radius: 50%;
+    display: grid;
+    height: 36px;
+    place-content: center;
+    width: 36px;
+  }
+
+  &__content {
+  }
+
+  &--expanded &__content {
+    transition: all 5s 1s;
+    position: absolute;
+  }
+
+  &--collapsed &__content {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 24px;
+    font-size: 32px;
+    padding: 0;
+    transition: all 5s;
+  }
+
+  &--expanded &__header--short-info {
+    display: none;
+  }
+
+  &__footer {
+    display: flex;
+    margin-top: auto;
+  }
+
+  &__plus-button {
+    color: $white-100;
+  }
+
+  &--expanded &__plus-button {
+    display: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
