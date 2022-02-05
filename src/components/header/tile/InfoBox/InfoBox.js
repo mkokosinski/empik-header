@@ -25,11 +25,13 @@ const InfoBox = ({ additionalInfo, buttonText, className, footerText, header, su
 
       <div className='info-box__container'>
         <div className='info-box__content'>
-          <h2 className='info-box__header'>
-            {header}
-            {showSubheader && <div>{subheader}</div>}
-          </h2>
-          <InfoBoxAdditionalInfo additionalInfo={additionalInfo} tileType={type} />
+          <div className='info-box__text-wrapper'>
+            <h2 className='info-box__header'>
+              {header}
+              {showSubheader && <div>{subheader}</div>}
+            </h2>
+            <InfoBoxAdditionalInfo additionalInfo={additionalInfo} tileType={type} />
+          </div>
 
           <div className='info-box__footer'>
             <Button type={BUTTON_TYPE.BOX}>{buttonText}</Button>

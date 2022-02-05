@@ -1,10 +1,16 @@
+@use 'styles/shared' as *;
+
 .header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 504px;
+  height: 550px;
 
-  @media screen and (max-width: 767px) {
-    flex-direction: column;
+  @include md {
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 504px;
   }
 }

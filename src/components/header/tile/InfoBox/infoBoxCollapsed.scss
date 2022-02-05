@@ -1,15 +1,24 @@
 @use 'styles/shared' as *;
 
 .info-box--collapsed {
-  padding: 0 23px;
+  padding: 0 20px;
+
+  @include md {
+    padding: 0 23px;
+  }
 
   .info-box {
     &__container {
       border-radius: 50%;
       display: grid;
+      margin: 0 15px;
       place-content: center;
-      position: absolute;
-      bottom: -2.2em;
+
+      @include md {
+        bottom: -2.2em;
+        position: absolute;
+        margin: 0;
+      }
     }
 
     &__content {
@@ -17,14 +26,13 @@
       opacity: 0;
       visibility: hidden;
     }
-
-    &__header {
-      font-size: 26px;
-      margin: 0 0 22px;
-    }
   }
   .additional-info {
-    font-size: 26px;
+    font-size: 20px;
+
+    @include md {
+      font-size: 26px;
+    }
 
     &__old-price {
       display: none;

@@ -3,29 +3,37 @@
 .tile {
   --boxColor: #{$red-400};
   --boxLeftOffet: 10%;
-  --boxSize: 36px;
+  --boxSize: 40px;
+
+  @include md {
+    --boxSize: 36px;
+  }
 
   align-items: center;
   display: flex;
   cursor: pointer;
-  height: 100%;
+  height: 100px;
   letter-spacing: 0.2px;
   line-height: 40px;
   overflow: hidden;
   position: relative;
   transition: 300ms cubic-bezier(0, 0, 0.3, 1);
-  // flex: 1 1 16.5%;
-  max-width: 16.5%;
   width: 100%;
 
   &--open {
     cursor: default;
-    max-width: 70%;
-    // flex: 1 1 70%;
+    height: 350px;
   }
 
   @include md {
     --boxLeftOffet: 10%;
+    height: 100%;
+    max-width: 16.5%;
+
+    &--open {
+      cursor: default;
+      max-width: 70%;
+    }
   }
 
   &:nth-of-type(1) &__info-box {
@@ -63,6 +71,7 @@
   &:not(&--open):hover {
     --boxSize: 40px;
   }
+
   &:not(&--open):hover &__overlay {
     --boxSize: 40px;
     background-color: rgba($black-900, 0.4);
