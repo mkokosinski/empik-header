@@ -1,11 +1,12 @@
-import React from 'react';
 import cs from 'classnames';
-import { infoBoxType } from '../tile.types';
 
-import './infoBox.scss';
 import Button from 'components/common/button/Button';
+import InfoBoxAdditionalInfo from 'components/header/tile/InfoBox/InfoBoxAdditionalInfo';
+
 import { BUTTON_TYPE } from 'components/common/button/Button.constants';
-import InfoBoxAdditionalInfo from './InfoBoxAdditionalInfo';
+import { infoBoxType } from 'components/header/tile/tile.types';
+import PlusIco from 'assets/icons/open-slider.svg';
+import './infoBox.scss';
 
 const InfoBox = ({ additionalInfo, buttonText, className, footerText, header, subheader, type, isOpen }) => {
   const showSubheader = subheader && isOpen;
@@ -36,12 +37,7 @@ const InfoBox = ({ additionalInfo, buttonText, className, footerText, header, su
           </div>
         </div>
         <Button className='info-box__plus-button'>
-          <img
-            className='lazy-img'
-            alt='+'
-            data-lazy='https://static.empikfoto.pl/slider/open-slider.svg'
-            src='https://static.empikfoto.pl/slider/open-slider.svg'
-          />
+          <img alt='+' data-lazy={PlusIco} src={PlusIco} />
         </Button>
       </div>
     </div>

@@ -21,7 +21,7 @@ const InfoBoxAdditionalInfo = ({ additionalInfo, tileType }) => {
 };
 
 InfoBoxAdditionalInfo.propTypes = {
-  additionalInfo: additionalInfoType,
+  additionalInfo: PropTypes.shape(additionalInfoType),
   tileType: PropTypes.oneOf(Object.values(TILE_TYPE)),
 };
 

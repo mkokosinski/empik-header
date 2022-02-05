@@ -1,7 +1,8 @@
+import { TILE_TYPE } from './tile/tile.constants';
+
 import imgTile1 from '../../assets/images/tina_odbitki220204_zmniejszona.jpg';
 import imgTile2 from '../../assets/images/tina_fotoksiazka_220204_zmniejszona.jpg';
 import imgTile3 from '../../assets/images/tina_plakaty_220201_optimized.jpg';
-import { TILE_TYPE } from './tile/tile.constants';
 
 export const HEADER_DATA = [
   {

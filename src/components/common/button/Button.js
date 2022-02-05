@@ -1,5 +1,7 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import cs from 'classnames';
+
+import { BUTTON_TYPE } from './Button.constants';
 
 import './button.scss';
 
@@ -18,6 +20,11 @@ const Button = ({ className, children, type, onClick }) => {
   );
 };
 
-Button.propTypes = {};
+Button.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
+  type: PropTypes.oneOf(Object.values(BUTTON_TYPE)),
+  onClick: PropTypes.func,
+};
 
 export default Button;

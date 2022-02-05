@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { HEADER_DATA } from './header.constants';
+import { useState } from 'react';
+
 import Tile from './tile/Tile';
+import { HEADER_DATA } from './header.constants';
 
 import './header.scss';
 
@@ -33,7 +33,5 @@ const Header = () => {
     </header>
   );
 };
-
-Header.propTypes = {};
 
 export default Header;

@@ -1,7 +1,7 @@
 import cs from 'classnames';
 
-import { headerTypes } from '../types';
 import InfoBox from './InfoBox/InfoBox';
+import { tileType } from './tile.types';
 
 import './tile.scss';
 
@@ -16,6 +16,6 @@ const Tile = ({ isOpen, infoBox, img, type, handleClick }) => {
   );
 };
 
-Tile.propTypes = headerTypes.tile;
+Tile.propTypes = tileType;
 
 export default Tile;
