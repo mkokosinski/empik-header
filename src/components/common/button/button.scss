@@ -1,0 +1,21 @@
+@use 'styles/shared' as *;
+
+.button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+
+  &--box {
+    border-radius: 37px;
+    background-color: $black-900;
+    color: $white-100;
+    cursor: pointer;
+    display: grid;
+    font-family: 'empik-bold', sans-serif;
+    font-size: 14px;
+    height: 40px;
+    place-content: center;
+    width: 133px;
+  }
+}
