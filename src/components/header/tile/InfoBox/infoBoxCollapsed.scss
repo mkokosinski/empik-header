@@ -1,18 +1,18 @@
 @use 'styles/shared' as *;
 
 .info-box--collapsed {
-  margin-left: 23px;
+  padding: 0 23px;
+
   .info-box {
     &__container {
       border-radius: 50%;
       display: grid;
-      height: 36px;
       place-content: center;
-      width: 36px;
+      position: absolute;
+      bottom: -2.2em;
     }
 
     &__content {
-      margin-left: 23px;
       font-size: 26px;
       opacity: 0;
       visibility: hidden;
@@ -20,6 +20,14 @@
 
     &__header {
       font-size: 26px;
+      margin: 0 0 22px;
+    }
+  }
+  .additional-info {
+    font-size: 26px;
+
+    &__old-price {
+      display: none;
     }
   }
 }

@@ -3,9 +3,13 @@ import cs from 'classnames';
 import { infoBoxType } from '../tile.types';
 
 import './infoBox.scss';
+import Button from 'components/common/button/Button';
+import { BUTTON_TYPE } from 'components/common/button/Button.constants';
+import InfoBoxAdditionalInfo from './InfoBoxAdditionalInfo';
 
-const InfoBox = ({ additionalInfo, buttonText, className, footerText, header, subheader, isOpen }) => {
+const InfoBox = ({ additionalInfo, buttonText, className, footerText, header, subheader, type, isOpen }) => {
   const showSubheader = subheader && isOpen;
+
   const boxClassName = cs('info-box', {
     'info-box--expanded': isOpen,
     'info-box--collapsed': !isOpen,
@@ -13,7 +17,10 @@ const InfoBox = ({ additionalInfo, buttonText, className, footerText, header, su
   });
   return (
     <div className={boxClassName}>
-      <h2 className='info-box__header info-box__header--short-info'>{header}</h2>
+      <h2 className='info-box__header info-box__header--short-info'>
+        {header}
+        <InfoBoxAdditionalInfo additionalInfo={additionalInfo} tileType={type} />
+      </h2>
 
       <div className='info-box__container'>
         <div className='info-box__content'>
@@ -21,14 +28,21 @@ const InfoBox = ({ additionalInfo, buttonText, className, footerText, header, su
             {header}
             {showSubheader && <div>{subheader}</div>}
           </h2>
-          <div className='info-box__additional-info'>asdasd</div>
-          {/* <div>{additionalInfo}</div> */}
+          <InfoBoxAdditionalInfo additionalInfo={additionalInfo} tileType={type} />
+
           <div className='info-box__footer'>
-            <button>{buttonText}</button>
-            <div>{footerText}</div>
+            <Button type={BUTTON_TYPE.BOX}>{buttonText}</Button>
+            <span className='info-box__footer-text'>{footerText}</span>
           </div>
         </div>
-        <div className='info-box__plus-button'>+</div>
+        <Button className='info-box__plus-button'>
+          <img
+            className='lazy-img'
+            alt='+'
+            data-lazy='https://static.empikfoto.pl/slider/open-slider.svg'
+            src='https://static.empikfoto.pl/slider/open-slider.svg'
+          />
+        </Button>
       </div>
     </div>
   );

@@ -1,6 +1,10 @@
 @use 'styles/shared' as *;
 
 .tile {
+  --boxColor: #{$red-400};
+  --boxLeftOffet: 10%;
+  --boxSize: 36px;
+
   align-items: center;
   display: flex;
   cursor: pointer;
@@ -20,26 +24,23 @@
     // flex: 1 1 70%;
   }
 
-  // &:nth-of-type(1) &__info-box {
-  //   background-color: $red-400;
-  // }
+  @include md {
+    --boxLeftOffet: 10%;
+  }
 
-  // &:nth-of-type(2) &__info-box {
-  //   background-color: $orange-400;
-  // }
-
-  // &:nth-of-type(3) &__info-box {
-  //   background-color: $yellow-400;
-  // }
-
-  &--open &__info-box {
-    @include md {
-      left: 13%;
-    }
-
+  &:nth-of-type(1) &__info-box {
+    --boxColor: #{$red-400};
     @include xl {
-      left: calc((100vw - 1180px) / 2);
+      --boxLeftOffet: calc((100vw - 1180px) / 2);
     }
+  }
+
+  &:nth-of-type(2) &__info-box {
+    --boxColor: #{$orange-400};
+  }
+
+  &:nth-of-type(3) &__info-box {
+    --boxColor: #{$yellow-400};
   }
 
   &__image {
@@ -56,10 +57,14 @@
     inset: 0;
     position: absolute;
     pointer-events: none;
-    transition: all 250ms cubic-bezier(0, 0, 0, 1);
+    transition: background-color 300ms ease;
   }
 
+  &:not(&--open):hover {
+    --boxSize: 40px;
+  }
   &:not(&--open):hover &__overlay {
+    --boxSize: 40px;
     background-color: rgba($black-900, 0.4);
   }
 

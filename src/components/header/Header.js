@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { HEADER_DATA } from './constants';
+import { HEADER_DATA } from './header.constants';
 import Tile from './tile/Tile';
 
 import './header.scss';
