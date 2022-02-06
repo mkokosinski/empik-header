@@ -17,7 +17,7 @@ const InfoBox = ({ additionalInfo, buttonText, className, footerText, header, su
     [className]: className,
   });
   return (
-    <div className={boxClassName}>
+    <div className={boxClassName} data-testid='header-infobox'>
       <h2 className='info-box__header info-box__header--short-info'>
         {header}
         <InfoBoxAdditionalInfo additionalInfo={additionalInfo} tileType={type} />
