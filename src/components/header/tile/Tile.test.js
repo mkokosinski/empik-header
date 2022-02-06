@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { HEADER_DATA } from '../header.constants';
 
 import Tile from './Tile';
+
+import { HEADER_DATA } from '../header.constants';
 import { TILE_TYPE } from './tile.constants';
 
 const { img, type, ...infoBox } = HEADER_DATA[0];
@@ -15,7 +15,7 @@ const props = {
   handleClick: jest.fn(),
 };
 
-describe('Button component', () => {
+describe('Tile component', () => {
   test('should render correctly', async () => {
     render(<Tile {...props} />);
     await screen.findByTestId('header-tile');

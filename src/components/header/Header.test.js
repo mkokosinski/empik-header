@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import Header from './Header';
 
-describe('Button component', () => {
+describe('Header component', () => {
   test('should render correctly', async () => {
     render(<Header />);
     await screen.findByRole('banner');
